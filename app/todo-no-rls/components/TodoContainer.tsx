@@ -1,11 +1,11 @@
 "use client";
 
-import { getTodos } from "@/apis/todos-no-rls";
+import { getTodosBySearch } from "@/apis/todos-no-rls";
 import { useEffect } from "react";
 
 const TodoContainer = () => {
   useEffect(() => {
-    getTodos();
+    getTodosBySearch("스프링");
   }, []);
 
   return <div>TodoContainer</div>;
