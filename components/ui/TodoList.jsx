@@ -37,8 +37,8 @@ const TodoList = ({
   };
 
   return (
-    <section className="min-h-[70vh] bg-[#69CFCF]">
-      <div className="w-full max-w-[800px] p-[20px] mx-auto">
+    <section className="min-h-[70vh] bg-[#69CFCF] ">
+      <div className="w-full max-w-[800px] p-[20px] mx-auto ">
         <article className="flex flex-row justify-between items-center">
           <div className="font-bold text-[32px]">
             {sharedUserFullName && <div>{sharedUserFullName}</div>}
@@ -73,12 +73,12 @@ const TodoList = ({
               >
                 <IoSearchOutline size={40} color="#fff" />
               </div>
-              <div
-                onClick={onCreate}
-                className="h-[60px] w-[200px] flex justify-center items-center bg-[#7ebb95] border border-black rounded-2xl font-bold cursor-pointer text-[20px]"
-              >
-                New Task
-              </div>
+            </div>
+            <div
+              onClick={onCreate}
+              className="h-[60px] w-[200px] flex justify-center items-center bg-[#7ebb95] border border-black rounded-2xl font-bold cursor-pointer text-[20px]"
+            >
+              New Task
             </div>
           </article>
         )}
