@@ -1,7 +1,13 @@
-import { IoShareSocialOutline } from "react-icons/io5";
+import { IoSearchOutline, IoShareSocialOutline } from "react-icons/io5";
 import { useCopyToClipboard } from "usehooks-ts";
+import TodoListItem from "./TodoListItem";
 
-const TodoList = ({ sharedUserFullName = "", ownerUserId = "" }) => {
+const TodoList = ({
+  sharedUserFullName = "",
+  ownerUserId = "",
+  loading = false,
+  todoListData = [],
+}) => {
   const [copiedText, copy] = useCopyToClipboard();
 
   const handleCopy = () => {
@@ -34,6 +40,27 @@ const TodoList = ({ sharedUserFullName = "", ownerUserId = "" }) => {
             </div>
           )}
         </article>
+        <article className="flex flex-col sm:flex-row gap-4 mt-8">
+          <div className="flex flex-1 h-[60px]">
+            <input className="p-4 flex-1 bg-[#f7cb66] border border-black rounded-l-2xl font-bold" />
+            <div className="w-[60px] flex justify-center items-center bg-black rounded-r-2xl cursor-pointer">
+              <IoSearchOutline size={40} color="#fff" />
+            </div>
+            <div className="h-[60px] w-[200px] flex justify-center items-center bg-[#7ebb95] border border-black rounded-2xl font-bold cursor-pointer text-[20px]">
+              New Task
+            </div>
+          </div>
+        </article>
+        <div className="h-[2px] my-10 bg-black"></div>
+        {todoListData?.length >= 1 ? (
+          <ul>
+            {(todoListData ?? []).map((todo) => {
+              return <TodoListItem key={todo?.id} todo={todo} />;
+            })}
+          </ul>
+        ) : (
+          <div>{loading ? "Loading..." : "Empty"}</div>
+        )}
       </div>
     </section>
   );
