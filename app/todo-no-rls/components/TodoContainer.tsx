@@ -1,11 +1,11 @@
 "use client";
 
-import { getTodosBySearch } from "@/apis/todos-no-rls";
+import { deleteTodosHard } from "@/apis/todos-no-rls";
 import { useEffect } from "react";
 
 const TodoContainer = () => {
   useEffect(() => {
-    getTodosBySearch("스프링");
+    deleteTodosHard(1);
   }, []);
 
   return <div>TodoContainer</div>;
