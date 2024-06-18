@@ -1,12 +1,12 @@
 "use client";
 
-import { deleteTodosHard } from "@/apis/todos-no-rls";
-import { useEffect } from "react";
+import useTodosController from "../hooks/useTodosController";
 
 const TodoContainer = () => {
-  useEffect(() => {
-    deleteTodosHard(1);
-  }, []);
+  const { loading, todos } = useTodosController();
+
+  console.log(loading);
+  console.log(todos);
 
   return <div>TodoContainer</div>;
 };
