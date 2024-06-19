@@ -1,11 +1,11 @@
 "use client";
 
-import { pingAction } from "@/actions/ping/ping.action";
+import { getTodoAction } from "@/actions/ping/todo/todo.action";
 
 const ClientComponentTest = () => {
   const handleClick = async () => {
-    const result = await pingAction();
-    console.log("result", result); 
+    const result = await getTodoAction();
+    console.log("handleClick result", result);
   };
 
   return (
