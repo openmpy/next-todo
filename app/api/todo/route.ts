@@ -1,4 +1,4 @@
-import { getTodoAction } from "@/actions/ping/todo/todo.action";
+import { getTodoAction } from "@/actions/todo/todo.action";
 import { NextResponse } from "next/server";
 
 export const GET = async () => {

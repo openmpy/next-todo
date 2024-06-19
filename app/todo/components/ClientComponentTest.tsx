@@ -1,6 +1,6 @@
 "use client";
 
-import { getTodoAction } from "@/actions/ping/todo/todo.action";
+import { getTodoAction } from "@/actions/todo/todo.action";
 
 const ClientComponentTest = () => {
   const handleClick = async () => {
