@@ -1,4 +1,4 @@
-import { getTodos } from "@/apis/todos-no-rls";
+import { getTodos } from "@/actions/todo/todo.action";
 import { NextResponse } from "next/server";
 
 export const GET = async () => {
