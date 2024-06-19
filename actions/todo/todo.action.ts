@@ -26,6 +26,17 @@ export const getTodosById = async (id: number) => {
   return result.data;
 };
 
+export const getTodosByUserId = async (userId: string) => {
+  const supabase = await createServerSideClient(true);
+  const result = await supabase
+    .from("todos_with_rls")
+    .select("*")
+    .is("deleted_at", null)
+    .eq("user_id", userId);
+
+  return result.data;
+};
+
 export const getTodosBySearch = async (terms: string) => {
   const supabase = await createServerSideClient();
   const result = await supabase
