@@ -20,7 +20,7 @@ const TodoList = ({
   const [copiedText, copy] = useCopyToClipboard();
 
   const handleCopy = () => {
-    const shareLink = `${"todoList 공유 링크"}/share/${ownerUserId}`;
+    const shareLink = `${process.env.NEXT_PUBLIC_AUTH_REDIRECT_TO_HOME}/share/${ownerUserId}`;
 
     copy(shareLink)
       .then(() => {
